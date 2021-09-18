@@ -11,10 +11,6 @@ all_characters = string.digits + string.ascii_lowercase
 random_string = ''.join(np.random.choice([char for char in all_characters], string_length, True))
 print(random_string)
 
-contains_digit = False
-
-for character in random_string:
-    if character.isdigit():
-        contains_digit = True
+contains_digit = any(map(str.isdigit, random_string))
 
 print(contains_digit)
